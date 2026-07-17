@@ -24,7 +24,16 @@
 A CLI-based background job queue system. Workers execute shell commands as jobs, failed jobs
 retry automatically with exponential backoff, and jobs that exhaust their retries are moved to
 a Dead Letter Queue (DLQ). Everything is persisted to SQLite, so the queue survives restarts.
+---
+## Demo
 
+[Demo video](https://drive.google.com/file/d/1r8gx-7PUUBH-UKsqBMPP_02uRXG9Vj3U/view?usp=drivesdk)
+
+The recording walks through: enqueuing a job that succeeds, enqueuing a job that fails,
+starting workers, checking `status`/`list`/`dlq list`, retrying a DLQ job, stopping workers
+gracefully, confirming persistence, and running the automated test suite.
+
+---
 
 ## 1. Setup Instructions
 
@@ -251,11 +260,3 @@ queuectl worker stop
 > macOS/Linux. Unix-only commands like `sleep` are **not** available as job commands on Windows
 > by default — if you want a cross-platform "wait" job, use
 > `node -e "setTimeout(()=>console.log('done'),2000)"` instead.
-
-## Demo
-
-[Demo video](https://drive.google.com/file/d/1r8gx-7PUUBH-UKsqBMPP_02uRXG9Vj3U/view?usp=drivesdk)
-
-The recording walks through: enqueuing a job that succeeds, enqueuing a job that fails,
-starting workers, checking `status`/`list`/`dlq list`, retrying a DLQ job, stopping workers
-gracefully, confirming persistence, and running the automated test suite.
