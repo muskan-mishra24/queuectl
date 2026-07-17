@@ -1,0 +1,4 @@
+node_modules/
+   .queuectl/
+   npm-debug.log*
+   *.log
