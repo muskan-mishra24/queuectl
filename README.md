@@ -1,8 +1,30 @@
-# queuectl
+# 📦 queuectl
+
+**A production-style CLI background job queue — with multi-worker processing, automatic retries with exponential backoff, a Dead Letter Queue, and SQLite-backed persistence.**
+
+![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Tests](https://img.shields.io/badge/tests-8%20passing-success)
+![Storage](https://img.shields.io/badge/storage-SQLite-blue)
+
+---
+
+### ✨ Features
+
+- 🚀 **Multi-worker processing** — run several worker processes in true parallel, no duplicate job execution
+- 🔁 **Automatic retries** with configurable exponential backoff
+- ☠️ **Dead Letter Queue (DLQ)** for jobs that exhaust all retries
+- 💾 **Persistent storage** via SQLite — job state survives restarts
+- ⚙️ **Configurable** retry count and backoff base, no hardcoded values
+- 🧪 **Fully tested** — end-to-end test suite covering every core scenario
+- 🖥️ **Clean CLI** with helpful `--help` output at every level
+
+---
 
 A CLI-based background job queue system. Workers execute shell commands as jobs, failed jobs
 retry automatically with exponential backoff, and jobs that exhaust their retries are moved to
 a Dead Letter Queue (DLQ). Everything is persisted to SQLite, so the queue survives restarts.
+
 
 ## 1. Setup Instructions
 
