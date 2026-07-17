@@ -232,5 +232,8 @@ queuectl worker stop
 
 ## Demo
 
-<!-- Add a link to your recorded CLI demo here before submitting, e.g.: -->
-<!-- [Demo video](https://drive.google.com/...) -->
+[Demo video](https://drive.google.com/file/d/1r8gx-7PUUBH-UKsqBMPP_02uRXG9Vj3U/view?usp=drivesdk)
+
+The recording walks through: enqueuing a job that succeeds, enqueuing a job that fails,
+starting workers, checking `status`/`list`/`dlq list`, retrying a DLQ job, stopping workers
+gracefully, confirming persistence, and running the automated test suite.
